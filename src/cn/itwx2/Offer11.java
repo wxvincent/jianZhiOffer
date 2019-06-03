@@ -8,9 +8,7 @@ package cn.itwx2;
 public class Offer11 {
 
     public static int minNumInRotateArray(int[] arr) throws Exception {
-        if (arr == null || arr.length <= 0) {
-            throw new Exception("错误的输入");
-        }
+        if (arr == null || arr.length <= 0) throw new Exception("错误的输入");
         if (arr.length == 1) return arr[0];
 
         int left = 0;
