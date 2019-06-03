@@ -14,8 +14,7 @@ import java.util.Set;
 public class Offer3 {
 
 	public static Set<Integer> findDuplicate(int[] arr) {
-		if (arr == null || arr.length < 1)
-			return null;
+		if (arr == null || arr.length < 1) return null;
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] < 0 || arr[i] >= arr.length) {
