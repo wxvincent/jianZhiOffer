@@ -4,32 +4,26 @@ import java.util.Stack;
 
 /**
  * 栈的压入弹出序列
- * 
- * @author wang
  *
+ * @author wang
  */
 public class Offer31 {
 
-	public boolean check(int[] push, int[] pop) {
+    public boolean check(int[] push, int[] pop) {
+        if (push == null || pop == null ||
+                push.length != pop.length || push.length == 0) return false;
 
-		if (push == null || pop == null || push.length != pop.length)
-			return false;
+        Stack<Integer> stack = new Stack<>();
 
-		Stack<Integer> stack = new Stack<Integer>();
-
-		if (push != null && pop != null && push.length > 0 && push.length == pop.length) {
-			int j = 0;
-			for (int i = 0; i < push.length; i++) {
-				stack.push(push[i]);
-				while ((!stack.empty()) && (stack.peek() == pop[j])) {
-					stack.pop();
-					j++;
-				}
-			}
-
-		}
-
-		return stack.empty();
-	}
+        int j = 0;
+        for (int i = 0; i < push.length; i++) {
+            stack.push(push[i]);
+            while ((!stack.empty()) && (stack.peek() == pop[j])) {
+                stack.pop();
+                j++;
+            }
+        }
+        return stack.empty();
+    }
 
 }
